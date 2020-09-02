@@ -57,17 +57,21 @@ const styles = ()=>{
 
 }
 
-const SignTemplate = ({classes, isLogin = false, title, submitText, leftButtonText, rightButtonText, inputInfo}) =>{
+const SignTemplate = ({classes, isNotAdmin = true, isLogin = false, title, submitText, leftButtonText, rightButtonText, inputInfo}) =>{
 
 	return(
 		<Box bgcolor="white" borderRadius=".75rem" p="1rem" width={4/12} mx="auto" mt="7rem">	
-			<Box textAlign="center">
+			<Box marginBottom=".25rem" textAlign="center">
 				<Typography className={classes.title} variant="h4">{title}</Typography>
 			</Box>
-			 <Box height="2.5rem" width="100%" display="flex" borderRadius=".5rem" border="3px solid #46aaf0" my="1rem" mx="auto">
+			{
+			isNotAdmin &&
+			<Box height="2.5rem" width="100%" display="flex" borderRadius=".5rem" border="3px solid #46aaf0" my="1rem" mx="auto">
 				<Button className={classes.button + " " + classes.buttonActive}>{leftButtonText}</Button>
 				<Button className={classes.button}>{rightButtonText}</Button>
 			</Box>
+			}
+			 
 			<Box>
 				{inputInfo.map(({placeholder, type}, index)=>{
 					return(
@@ -82,7 +86,7 @@ const SignTemplate = ({classes, isLogin = false, title, submitText, leftButtonTe
 			</Box>
 			{
 				isLogin &&
-				<Box my="1rem" fontSize=".75rem" textAlign="center" width="100%" color="#46aaf0">
+				<Box mt="1rem" fontSize=".875rem" textAlign="center" width="100%" color="#46aaf0">
 					<Link className={classes.link}>Olvidaste tu contraseña?</Link>
 				</Box>
 			}
@@ -150,9 +154,27 @@ const SignInPage = ({classes})=>{
 	)
 }
 
-
+const AdminPage = ({classes})=>{
+	return(
+		<SignTemplate classes={classes} 
+			title="Panel Administrador" 
+			isNotAdmin={false}
+			submitText="Ingresar" 
+			inputInfo={[{
+				placeholder:"Email",
+				type:"text"
+			},
+			{
+				placeholder:"Contraseña",
+				type:"password"
+			},	
+			]}/>
+			
+	)
+}
 
 const SignIn = withStyles(styles)(SignInPage)
 const SignUp = withStyles(styles)(SignUpPage) 
+const Admin = withStyles(styles)(AdminPage) 
 
-export { SignIn, SignUp }
+export { SignIn, SignUp, Admin }
