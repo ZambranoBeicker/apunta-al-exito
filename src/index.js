@@ -10,7 +10,7 @@ import Components from "views/Components/Components.js";
 import LandingPage from "views/LandingPage/LandingPage.js";
 import ProfilePage from "views/ProfilePage/ProfilePage.js";
 import LoginPage from "views/LoginPage/LoginPage.js";
-import SignUp from "views/Sign/SignUp/index.js";
+import SignUp from "views/Sign/index.js";
 
 var hist = createBrowserHistory();
 
