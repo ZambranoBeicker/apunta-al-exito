@@ -7,23 +7,23 @@ const styles = ()=>{
 	button:{
 		width:"50%",
 		borderRadius:0,
-		color:"lightblue",
+		color:"#46aaf0",
 		textTransform:"capitalize",
 	},
 	buttonActive:{
-		background: "lightblue",
+		background: "#46aaf0",
 		color:"white",
 	},
 	submitButton:{
 		width:"100%",
-		background:"lightblue",
+		background:"#46aaf0",
 		borderRadius:0,
 		textTransform:"capitalize",
 	},
 	input:{
 		padding: ".25rem .5rem !important",
 		margin: ".5rem 0",
-		border:"1px solid lightblue",
+		border:"1px solid #46aaf0",
 		borderRadius: ".5rem",
 		"&::before":{
 			border:0,
@@ -51,7 +51,7 @@ const SignTemplate = ({classes, title, submitText, leftButtonText, rightButtonTe
 			<Box textAlign="center">
 				<Typography className={classes.title} variant="h4">{title}</Typography>
 			</Box>
-			 <Box width="100%" display="flex" borderRadius=".5rem" border="3px solid lightblue" my="1rem" mx="auto">
+			 <Box width="100%" display="flex" borderRadius=".5rem" border="3px solid #46aaf0" my="1rem" mx="auto">
 				<Button className={classes.button + " " + classes.buttonActive}>{leftButtonText}</Button>
 				<Button className={classes.button}>{rightButtonText}</Button>
 			</Box>
@@ -64,7 +64,7 @@ const SignTemplate = ({classes, title, submitText, leftButtonText, rightButtonTe
 					)
 				})}
 			</Box>
-			<Box my="1rem" width="100%" borderRadius=".5rem" color="white" border="3px solid lightblue">
+			<Box my="1rem" width="100%" borderRadius=".5rem" color="white" border="3px solid #46aaf0">
 				<Button className={classes.submitButton + " " + classes.buttonActive}>{submitText}</Button>
 			</Box>
 			
