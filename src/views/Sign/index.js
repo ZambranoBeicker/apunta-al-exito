@@ -32,11 +32,13 @@ const styles = ()=>{
 	},
 	link:{
 		cursor:"pointer",
+		fontSize:".75rem"
 	},
 	input:{
 		padding: ".25rem .5rem !important",
 		margin: ".5rem 0",
 		border:"1px solid #46aaf0",
+		fontSize:".875rem",
 		borderRadius: ".5rem",
 		"&::before":{
 			border:0,
@@ -50,17 +52,26 @@ const styles = ()=>{
 		 
 	},
 	title:{
-		fontSize:"1.25rem",
+		fontSize:"1rem",
 		fontWeight:"bold",
 	},
-})
-
-}
+	'@media (min-width: 1024px)':{
+		input:{
+			fontSize:"1rem",
+		},
+		link:{
+			fontSize:".875rem"
+		},
+		title:{
+			fontSize:"1.25rem"
+		},
+	}
+})}
 
 const SignTemplate = ({classes, isNotAdmin = true, isLogin = false, title, submitText, leftButtonText, rightButtonText, inputInfo}) =>{
 
 	return(
-		<Box bgcolor="white" borderRadius=".75rem" p="1rem" width={4/12} mx="auto" mt="7rem">	
+		<Box width="90%" maxWidth={400} bgcolor="white" borderRadius=".75rem" p="1rem" mx="auto" mt="7rem" mb="2rem">	
 			<Box marginBottom=".25rem" textAlign="center">
 				<Typography className={classes.title} variant="h4">{title}</Typography>
 			</Box>
@@ -81,12 +92,12 @@ const SignTemplate = ({classes, isNotAdmin = true, isLogin = false, title, submi
 					)
 				})}
 			</Box>
-			<Box height="2.5rem" my="1rem" width="100%" borderRadius=".5rem" color="white" border="3px solid #46aaf0">
+			<Box height="2.5rem" display="flex" my="1rem" width="100%" borderRadius=".5rem" color="white" border="3px solid #46aaf0">
 				<Button className={classes.submitButton + " " + classes.buttonActive}>{submitText}</Button>
 			</Box>
 			{
 				isLogin &&
-				<Box mt="1rem" fontSize=".875rem" textAlign="center" width="100%" color="#46aaf0">
+				<Box mt="1rem" textAlign="center" width="100%" color="#46aaf0">
 					<Link className={classes.link}>Olvidaste tu contraseña?</Link>
 				</Box>
 			}
