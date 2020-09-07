@@ -1,4 +1,4 @@
-import React from "react"
+import React,{ useState, useEffect } from "react"
 import { Link, Input, Box, Typography, Button } from "@material-ui/core"
 import { createStyles, withStyles } from "@material-ui/core/styles"
 
@@ -70,6 +70,13 @@ const styles = ()=>{
 
 const SignTemplate = ({classes, isNotAdmin = true, isLogin = false, title, submitText, leftButtonText, rightButtonText, inputInfo}) =>{
 
+	const [values, setValues] = useState(inputInfo.map(()=> false))
+	const [submitDisable, setSubmitDisable] = useState(false)
+
+	useEffect(()=>{
+		setSubmitDisable(values.every(value => value === true))
+	},[values])
+
 	return(
 		<Box width="90%" maxWidth={400} bgcolor="white" borderRadius=".75rem" p="1rem" mx="auto" mt="7rem" mb="2rem">	
 			<Box marginBottom=".25rem" textAlign="center">
@@ -87,13 +94,21 @@ const SignTemplate = ({classes, isNotAdmin = true, isLogin = false, title, submi
 				{inputInfo.map(({placeholder, type}, index)=>{
 					return(
 						<div key={index}>
-							<Input className={classes.input} type={type}   fullWidth={true} placeholder={placeholder} />
+							<Input 
+								className={classes.input} type={type}
+								fullWidth={true} 
+								placeholder={placeholder} 
+						onChange={(e)=>{
+							if(e.target.value.length >=3){
+								setValues(values.map((v,i)=> (i === index) ? true : v))
+							}
+						}}/>
 						</div>
 					)
 				})}
 			</Box>
 			<Box height="2.5rem" display="flex" my="1rem" width="100%" borderRadius=".5rem" color="white" border="3px solid #46aaf0">
-				<Button className={classes.submitButton + " " + classes.buttonActive}>{submitText}</Button>
+				<Button disabled={!submitDisable} className={classes.submitButton + " " + classes.buttonActive}>{submitText}</Button>
 			</Box>
 			{
 				isLogin &&
