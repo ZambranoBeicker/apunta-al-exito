@@ -165,6 +165,21 @@ const SignInPage = ({classes})=>{
 	)
 }
 
+const ForgotPasswordPage = ({classes})=>{
+	return(
+		<SignTemplate classes={classes} 
+			title="Recuperar Contraseña" 
+			submitText="Enviar" 
+			isNotAdmin={false}
+			inputInfo={[{
+				placeholder:"Email",
+				type:"email"
+			},
+			]}/>
+			
+	)
+}
+
 const AdminPage = ({classes})=>{
 	return(
 		<SignTemplate classes={classes} 
@@ -187,5 +202,6 @@ const AdminPage = ({classes})=>{
 const SignIn = withStyles(styles)(SignInPage)
 const SignUp = withStyles(styles)(SignUpPage) 
 const Admin = withStyles(styles)(AdminPage) 
+const ForgotPassword = withStyles(styles)(ForgotPasswordPage) 
 
-export { SignIn, SignUp, Admin }
+export { SignIn, SignUp, Admin, ForgotPassword }

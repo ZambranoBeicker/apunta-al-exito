@@ -10,7 +10,7 @@ import Components from "views/Components/Components.js";
 import LandingPage from "views/LandingPage/LandingPage.js";
 import ProfilePage from "views/ProfilePage/ProfilePage.js";
 import LoginPage from "views/LoginPage/LoginPage.js";
-import { Admin, SignUp, SignIn} from "views/Sign/index.js";
+import { Admin, SignUp, SignIn, ForgotPassword } from "views/Sign/index.js";
 
 var hist = createBrowserHistory();
 
@@ -18,6 +18,7 @@ ReactDOM.render(
   <Router history={hist}>
     <Switch>
       <Route path="/admin" component={ Admin } />
+      <Route path="/recuperar-clave" component={ ForgotPassword } />
       <Route path="/ingresar" component={ SignIn } />
       <Route path="/registro" component={ SignUp } />
       <Route path="/landing-page" component={LandingPage} />
