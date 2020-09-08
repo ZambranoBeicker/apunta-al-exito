@@ -1,6 +1,8 @@
 import React,{ useState, useEffect } from "react"
 import { Link, Input, Box, Typography, Button } from "@material-ui/core"
 import { createStyles, withStyles } from "@material-ui/core/styles"
+import GenericInput from "../../components/GenericInput/index.js"
+
 
 const styles = ()=>{
 	return createStyles({
@@ -34,23 +36,7 @@ const styles = ()=>{
 		cursor:"pointer",
 		fontSize:".75rem"
 	},
-	input:{
-		padding: ".25rem .5rem !important",
-		margin: ".5rem 0",
-		border:"1px solid #46aaf0",
-		fontSize:".875rem",
-		borderRadius: ".5rem",
-		"&::before":{
-			border:0,
-		},
-		"&::after":{
-			border:0,
-		},
-		"&:hover:not(.Mui-disabled)::before":{
-			borderBottom:0,
-		},
-		 
-	},
+	
 	title:{
 		fontSize:"1rem",
 		fontWeight:"bold",
@@ -94,9 +80,8 @@ const SignTemplate = ({classes, isNotAdmin = true, isLogin = false, title, submi
 				{inputInfo.map(({placeholder, type}, index)=>{
 					return(
 						<div key={index}>
-							<Input 
-								className={classes.input} type={type}
-								fullWidth={true} 
+							<GenericInput
+								type={type}
 								placeholder={placeholder} 
 						onChange={(e)=>{
 							if(e.target.value.length >=3){
