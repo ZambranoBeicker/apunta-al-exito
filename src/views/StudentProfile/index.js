@@ -107,7 +107,7 @@ const StudentProfile = ({classes})=>{
 			</Box>
 
 			<Box>
-				<Box borderBottom="1px solid black" mt=".75rem" mb="1.25rem" pb=".75rem">
+				<Box borderBottom="1px solid black" mt="2.25rem" mb="1.25rem" pb=".75rem">
 		 			<Typography className={classes.primaryTitle + " " + classes.title} variant="h4">Calificaciones</Typography>	
 				</Box>
 
@@ -117,9 +117,9 @@ const StudentProfile = ({classes})=>{
 					<Box>
 						<Typography className={classes.secondaryTitle + " " + classes.title} variant="h5">Comentarios:</Typography>
 					</Box>
-					<Box display="flex">
-						<Box>
-							<image src={image} alt="..." />
+					<Box display="flex" mt=".25rem" mb="1rem">
+						<Box maxWidth="3.5rem" mr="1.25rem">
+							<img className={classes.image} src={image} alt="..." />
 						</Box>
 						<Box>
 							<Typography variant="h5">Ricardo</Typography>
@@ -127,9 +127,9 @@ const StudentProfile = ({classes})=>{
 						</Box>
 					</Box>
 
-					<Box display="flex">
-						<Box>
-							<image src={image} alt="..." />
+					<Box display="flex" mb="1rem">
+						<Box maxWidth="3.5rem" mr="1.25rem">
+							<img className={classes.image} src={image} alt="..." />
 						</Box>
 						<Box>
 							<Typography variant="h5">Ricardo</Typography>
