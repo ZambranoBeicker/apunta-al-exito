@@ -1,12 +1,18 @@
 import React from "react"
-import { Button, Typography, Box, Tabs, Tab } from "@material-ui/core"
+import { IconButton ,Button, Typography, Box, Tabs, Tab } from "@material-ui/core"
 import { createStyles, withStyles } from "@material-ui/core/styles"
+import MenuIcon from "@material-ui/icons/Menu"
 import image from "assets/img/faces/avatar.jpg";
 import GenericInput from "../../components/GenericInput/index.js";
 
 
 const styles = ()=>{
 	return createStyles({
+		burgerMenu:{
+			display:"block",
+			marginLeft:"auto",
+			marginRight:"1rem",
+		},
 		perfilTitle:{
 			fontSize:"1.5rem",
 			marginBottom:".25rem",
@@ -59,6 +65,11 @@ const StudentProfile = ({classes})=>{
 	
 	return(
 	<>
+		<Box>
+			<IconButton className={classes.burgerMenu}>
+				<MenuIcon />
+			</IconButton>
+		</Box>
 		<Box className={classes.menu}>
 			<Tabs 
 			  orientation="vertical"
