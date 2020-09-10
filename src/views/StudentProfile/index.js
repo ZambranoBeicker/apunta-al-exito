@@ -1,4 +1,4 @@
-import React from "react"
+import React,{ useState, useEffect } from "react"
 import { IconButton ,Button, Typography, Box, Tabs, Tab } from "@material-ui/core"
 import { createStyles, withStyles } from "@material-ui/core/styles"
 import MenuIcon from "@material-ui/icons/Menu"
@@ -8,6 +8,12 @@ import GenericInput from "../../components/GenericInput/index.js";
 
 const styles = ()=>{
 	return createStyles({
+		inVisible:{
+			display:"none",
+		},
+		visible:{
+			display:"block",
+		},
 		burgerMenu:{
 			display:"block",
 			marginLeft:"auto",
@@ -39,9 +45,6 @@ const styles = ()=>{
 			height:"auto",
 			borderRadius:"50%",
 		},
-		menu:{
-			display:"none",
-		},
 		primaryTitle:{
 			fontSize:"1.25rem",
 		},
@@ -62,15 +65,30 @@ const styles = ()=>{
 }
 
 const StudentProfile = ({classes})=>{
-	
+
+	const [menuDisplay, setMenuDisplay] = useState(classes.inVisible)
+	const [isMenuVisible, setIsMenuVisible] = useState(false)
+
+	useEffect(()=>{
+
+		if(isMenuVisible){
+			setMenuDisplay(classes.visible)
+
+		}else{
+			setMenuDisplay(classes.inVisible)
+		}
+	},[isMenuVisible])
+
 	return(
 	<>
 		<Box>
-			<IconButton className={classes.burgerMenu}>
+			<IconButton 
+				className={classes.burgerMenu} 
+				onClick={()=>{setIsMenuVisible((c)=> !c)}}>
 				<MenuIcon />
 			</IconButton>
 		</Box>
-		<Box className={classes.menu}>
+		<Box className={menuDisplay}>
 			<Tabs 
 			  orientation="vertical"
 				
