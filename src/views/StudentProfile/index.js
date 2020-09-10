@@ -15,6 +15,9 @@ const styles = ()=>{
 			textTransform:"capitalize",
 		},
 		tabs:{
+			width:"100%",
+			position:"fixed",
+			top:0,
 			background:"rgba(0,0,0,.65)",
 			color:"white",
 			padding:"4.5rem 0",
