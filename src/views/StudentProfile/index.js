@@ -8,6 +8,23 @@ import GenericInput from "../../components/GenericInput/index.js";
 
 const styles = ()=>{
 	return createStyles({
+		lastTab:{	
+			borderBottom:"1px solid white",
+		},
+		capitalize:{
+			textTransform:"capitalize",
+		},
+		tabs:{
+			background:"rgba(0,0,0,.65)",
+			color:"white",
+			padding:"4.5rem 0",
+		},
+		tab:{
+			margin:"0 auto",
+			borderTop:"1px solid white",
+			maxWidth:"100% !important",
+			width:"100%",
+		},
 		inVisible:{
 			display:"none",
 		},
@@ -35,7 +52,6 @@ const styles = ()=>{
 			color:"white",
 			marginLeft:".75rem",
 			padding:".25rem 1.75rem",
-			textTransform:"capitalize",
 		},
 		input:{
 			marginTop:0,
@@ -91,13 +107,14 @@ const StudentProfile = ({classes})=>{
 		<Box className={menuDisplay}>
 			<Tabs 
 			  orientation="vertical"
-				
+				className={classes.tabs}	
 				>
-				<Tab label="A tab"/>
-				<Tab label="A tab"/>
-				<Tab label="A tab"/>
-				<Tab label="A tab"/>
-				<Tab label="A tab"/>
+				<Tab label="Noticias" className={classes.tab + " " + classes.capitalize}/>
+				<Tab label="Perfil" className={classes.tab + " " + classes.capitalize}/>
+				<Tab label="Tutorías" className={classes.tab + " " + classes.capitalize}/>
+				<Tab label="Configuraciones" className={classes.tab + " " + classes.capitalize}/>
+				<Tab label="Ayuda" className={classes.tab + " " + classes.capitalize}/>
+				<Tab label="Cerrar Sesión" className={classes.tab + " " + classes.capitalize + " " + classes.lastTab}/>
 			</Tabs>
 		</Box>
 		<Box px="1rem" py="1.75rem">
@@ -129,7 +146,7 @@ const StudentProfile = ({classes})=>{
 					</Box>
 					<Box display="flex" my="1rem">
 						<Button className={classes.saveButton}>Guardar</Button>
-						<Button className={classes.cancelButton}>Cancelar</Button>
+						<Button className={classes.cancelButton + " " + classes.capitalize}>Cancelar</Button>
 					</Box>
 				</Box>
 
