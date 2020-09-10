@@ -8,6 +8,9 @@ import GenericInput from "../../components/GenericInput/index.js";
 
 const styles = ()=>{
 	return createStyles({
+		burgerMenuActive:{
+			color:"white",
+		},
 		lastTab:{	
 			borderBottom:"1px solid white",
 		},
@@ -86,23 +89,26 @@ const styles = ()=>{
 const StudentProfile = ({classes})=>{
 
 	const [menuDisplay, setMenuDisplay] = useState(classes.inVisible)
+	const [burgerMenuColor, setBurgerMenuColor] = useState("")
 	const [isMenuVisible, setIsMenuVisible] = useState(false)
 
 	useEffect(()=>{
 
 		if(isMenuVisible){
 			setMenuDisplay(classes.visible)
+			setBurgerMenuColor(classes.burgerMenuActive)
 
 		}else{
 			setMenuDisplay(classes.inVisible)
+			setBurgerMenuColor("")
 		}
 	},[isMenuVisible])
 
 	return(
 	<>
-		<Box>
+		<Box position="relative" zIndex={100}>
 			<IconButton 
-				className={classes.burgerMenu} 
+				className={classes.burgerMenu + " " + burgerMenuColor} 
 				onClick={()=>{setIsMenuVisible((c)=> !c)}}>
 				<MenuIcon />
 			</IconButton>
