@@ -8,6 +8,13 @@ import GenericInput from "../../components/GenericInput/index.js";
 
 const styles = ()=>{
 	return createStyles({
+		wrapper:{
+			alignItems:"flex-start",
+			paddingLeft:"45%",
+		},
+		labelIcon:{
+			minHeight:48,
+		},
 		tabTextcolorInherit:{
 			opacity:1,
 		},
@@ -70,6 +77,12 @@ const styles = ()=>{
 		input:{
 			marginTop:0,
 		},
+		tabIcon:{
+			maxWidth:"100%",
+			height:"2.25rem",
+			position:"absolute",
+			left:"30%",
+		},
 		image:{
 			width:"100%",
 			height:"auto",
@@ -131,44 +144,62 @@ const StudentProfile = ({classes})=>{
 				onChange={(e,newValue)=>{setTabValue(newValue)}}
 				>
 				<Tab classes={{
-					textColorInherit:classes.tabTextcolorInherit
+					textColorInherit:classes.tabTextcolorInherit,
+					labelIcon:classes.labelIcon,
+					wrapper:classes.wrapper, 
 				}} 
 					label="Noticias" 
+					icon={<img src="./svg/folded-newspaper.svg" alt="User Icon" className={classes.tabIcon}/>}
 					className={classes.tab + " " + classes.capitalize}
 				/>
 
 				<Tab classes={{
-						textColorInherit:classes.tabTextcolorInherit
+						textColorInherit:classes.tabTextcolorInherit,
+						labelIcon:classes.labelIcon,
+						wrapper:classes.wrapper,
 					}}
 					label="Perfil" 
+					icon={<img src="./svg/user.svg" alt="User Icon" className={classes.tabIcon}/>}
 					className={classes.tab + " " + classes.capitalize}
 				/>
 
 				<Tab classes={{
-					textColorInherit:classes.tabTextcolorInherit
+					textColorInherit:classes.tabTextcolorInherit,
+					labelIcon:classes.labelIcon,
+					wrapper:classes.wrapper,
 				}}
 					label="Tutorías" 
-					className={classes.tab + " " + classes.capitalize}
+				icon={<img src="./svg/college-graduation.svg" alt="User Icon" className={classes.tabIcon}/>}
+				className={classes.tab + " " + classes.capitalize}
 				/>
 
 				<Tab classes={{
-					textColorInherit:classes.tabTextcolorInherit
+					textColorInherit:classes.tabTextcolorInherit,
+					labelIcon:classes.labelIcon,
+					wrapper:classes.wrapper,
 				}} 
 					label="Configuraciones" 
+					icon={<img src="./svg/icon.svg" alt="User Icon" className={classes.tabIcon}/>}
 					className={classes.tab + " " + classes.capitalize}
 				/>
 
 				<Tab classes={{
-					textColorInherit:classes.tabTextcolorInherit
+					textColorInherit:classes.tabTextcolorInherit,
+					labelIcon:classes.labelIcon,
+					wrapper:classes.wrapper,
 				}} 
 					label="Ayuda" 
+					icon={<img src="./svg/question-mark.svg" alt="User Icon" className={classes.tabIcon}/>}
 					className={classes.tab + " " + classes.capitalize}
 				/>
 
 				<Tab classes={{
-					textColorInherit:classes.tabTextcolorInherit
+					textColorInherit:classes.tabTextcolorInherit,
+					labelIcon:classes.labelIcon,
+					wrapper:classes.wrapper,
 				}}
  					label="Cerrar Sesión" 
+					icon={<img src="./svg/logout.svg" alt="User Icon" className={classes.tabIcon}/>}
 					className={classes.tab + " " + classes.capitalize + " " + classes.lastTab}
 				/>
 			</Tabs>
