@@ -8,6 +8,13 @@ import GenericInput from "../../components/GenericInput/index.js";
 
 const styles = ()=>{
 	return createStyles({
+		tabTextcolorInherit:{
+			opacity:1,
+		},
+		indicator:{
+			background:"#46aaf0",
+			width:5,
+		},
 		burgerMenuActive:{
 			color:"white",
 		},
@@ -24,6 +31,7 @@ const styles = ()=>{
 			background:"rgba(0,0,0,.65)",
 			color:"white",
 			padding:"4.5rem 0",
+			borderRight:"5px solid white",
 		},
 		tab:{
 			margin:"0 auto",
@@ -91,6 +99,7 @@ const StudentProfile = ({classes})=>{
 	const [menuDisplay, setMenuDisplay] = useState(classes.inVisible)
 	const [burgerMenuColor, setBurgerMenuColor] = useState("")
 	const [isMenuVisible, setIsMenuVisible] = useState(false)
+	const [tabValue, setTabValue] = useState(1)
 
 	useEffect(()=>{
 
@@ -116,14 +125,52 @@ const StudentProfile = ({classes})=>{
 		<Box className={menuDisplay}>
 			<Tabs 
 			  orientation="vertical"
-				className={classes.tabs}	
+				value={tabValue}
+				className={classes.tabs}
+				classes={{indicator: classes.indicator}}
+				onChange={(e,newValue)=>{setTabValue(newValue)}}
 				>
-				<Tab label="Noticias" className={classes.tab + " " + classes.capitalize}/>
-				<Tab label="Perfil" className={classes.tab + " " + classes.capitalize}/>
-				<Tab label="Tutorías" className={classes.tab + " " + classes.capitalize}/>
-				<Tab label="Configuraciones" className={classes.tab + " " + classes.capitalize}/>
-				<Tab label="Ayuda" className={classes.tab + " " + classes.capitalize}/>
-				<Tab label="Cerrar Sesión" className={classes.tab + " " + classes.capitalize + " " + classes.lastTab}/>
+				<Tab classes={{
+					textColorInherit:classes.tabTextcolorInherit
+				}} 
+					label="Noticias" 
+					className={classes.tab + " " + classes.capitalize}
+				/>
+
+				<Tab classes={{
+						textColorInherit:classes.tabTextcolorInherit
+					}}
+					label="Perfil" 
+					className={classes.tab + " " + classes.capitalize}
+				/>
+
+				<Tab classes={{
+					textColorInherit:classes.tabTextcolorInherit
+				}}
+					label="Tutorías" 
+					className={classes.tab + " " + classes.capitalize}
+				/>
+
+				<Tab classes={{
+					textColorInherit:classes.tabTextcolorInherit
+				}} 
+					label="Configuraciones" 
+					className={classes.tab + " " + classes.capitalize}
+				/>
+
+				<Tab classes={{
+					textColorInherit:classes.tabTextcolorInherit
+				}} 
+					label="Ayuda" 
+					className={classes.tab + " " + classes.capitalize}
+				/>
+
+				<Tab classes={{
+					textColorInherit:classes.tabTextcolorInherit
+				}}
+ 					label="Cerrar Sesión" 
+					className={classes.tab + " " + classes.capitalize + " " + classes.lastTab}
+				/>
 			</Tabs>
 		</Box>
 		<Box px="1rem" py="1.75rem">
