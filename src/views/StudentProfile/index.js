@@ -8,6 +8,7 @@ import GenericInput from "../../components/GenericInput/index.js";
 
 const styles = ()=>{
 	return createStyles({
+		
 		wrapper:{
 			alignItems:"flex-start",
 			paddingLeft:"45%",
@@ -38,7 +39,6 @@ const styles = ()=>{
 			background:"rgba(0,0,0,.65)",
 			color:"white",
 			padding:"4.5rem 0",
-			borderRight:"5px solid white",
 		},
 		tab:{
 			margin:"0 auto",
@@ -103,7 +103,40 @@ const styles = ()=>{
 		table:{
 			border:"1px solid rgba(0,0,0,.25)",
 			borderRadius:3,
-		}
+		},
+		'@media screen and (min-width:1024px)':{
+			burgerMenu:{
+				display:"none",
+			},
+			inVisible:{
+				display:"block",
+			},
+			imageWrapper:{
+				maxWidth:270,
+				background:"rgba(0,0,0,.65)",
+				color:"white",
+			},
+			tabs:{
+				position:"static",
+				maxWidth:270,
+				marginRight:"auto",
+			},
+			mainWrapper:{
+				display:"flex",
+				width:"100%",
+			},
+			calificaciones:{
+				marginTop:".75rem",
+			},
+			sectionWrapper:{
+				width:"45%",
+				marginLeft: "auto",
+				marginRight: "auto",
+			},
+			profileName:{
+				marginBottom:0,
+			},
+		},
 	})
 }
 
@@ -127,7 +160,9 @@ const StudentProfile = ({classes})=>{
 	},[isMenuVisible])
 
 	return(
-	<>
+<>
+	<Box classes={{root:classes.mainWrapper}}>
+		
 		<Box position="relative" zIndex={100}>
 			<IconButton 
 				className={classes.burgerMenu + " " + burgerMenuColor} 
@@ -135,90 +170,98 @@ const StudentProfile = ({classes})=>{
 				<MenuIcon />
 			</IconButton>
 		</Box>
-		<Box className={menuDisplay}>
-			<Tabs 
-			  orientation="vertical"
-				value={tabValue}
-				className={classes.tabs}
-				classes={{indicator: classes.indicator}}
-				onChange={(e,newValue)=>{setTabValue(newValue)}}
-				>
-				<Tab classes={{
-					textColorInherit:classes.tabTextcolorInherit,
-					labelIcon:classes.labelIcon,
-					wrapper:classes.wrapper, 
-				}} 
-					label="Noticias" 
-					icon={<img src="./svg/folded-newspaper.svg" alt="User Icon" className={classes.tabIcon}/>}
-					className={classes.tab + " " + classes.capitalize}
-				/>
 
-				<Tab classes={{
+		<Box>
+
+			<Box classes={{root:classes.imageWrapper}}>
+				<Box mx="auto">
+					<img className={classes.image} src={image} alt="..."/>
+				</Box>
+				<Box className={classes.profileName} textAlign="center" mt="1.25rem" mb="2.25rem">
+					<Typography className={classes.title + " " + classes.perfilTitle} variant="h3">Morgan Freeman</Typography>
+					<Typography variant="p">Colegio Alemán</Typography>
+				</Box>	
+			</Box>
+
+			<Box className={menuDisplay}>
+			
+				<Tabs 
+				  orientation="vertical"
+					value={tabValue}
+					className={classes.tabs}
+					classes={{indicator: classes.indicator}}
+					onChange={(e,newValue)=>{setTabValue(newValue)}}
+				>
+					<Tab classes={{
+						textColorInherit:classes.tabTextcolorInherit,
+						labelIcon:classes.labelIcon,
+						wrapper:classes.wrapper, 
+					}} 
+						label="Noticias" 
+						icon={<img src="./svg/folded-newspaper.svg" alt="User Icon" className={classes.tabIcon}/>}
+						className={classes.tab + " " + classes.capitalize}
+					/>
+
+					<Tab classes={{
+							textColorInherit:classes.tabTextcolorInherit,
+							labelIcon:classes.labelIcon,
+							wrapper:classes.wrapper,
+						}}
+						label="Perfil" 
+						icon={<img src="./svg/user.svg" alt="User Icon" className={classes.tabIcon}/>}
+						className={classes.tab + " " + classes.capitalize}
+					/>
+
+					<Tab classes={{
 						textColorInherit:classes.tabTextcolorInherit,
 						labelIcon:classes.labelIcon,
 						wrapper:classes.wrapper,
 					}}
-					label="Perfil" 
-					icon={<img src="./svg/user.svg" alt="User Icon" className={classes.tabIcon}/>}
-					className={classes.tab + " " + classes.capitalize}
-				/>
-
-				<Tab classes={{
-					textColorInherit:classes.tabTextcolorInherit,
-					labelIcon:classes.labelIcon,
-					wrapper:classes.wrapper,
-				}}
 					label="Tutorías" 
-				icon={<img src="./svg/college-graduation.svg" alt="User Icon" className={classes.tabIcon}/>}
-				className={classes.tab + " " + classes.capitalize}
-				/>
-
-				<Tab classes={{
-					textColorInherit:classes.tabTextcolorInherit,
-					labelIcon:classes.labelIcon,
-					wrapper:classes.wrapper,
-				}} 
-					label="Configuraciones" 
-					icon={<img src="./svg/icon.svg" alt="User Icon" className={classes.tabIcon}/>}
+					icon={<img src="./svg/college-graduation.svg" alt="User Icon" className={classes.tabIcon}/>}
 					className={classes.tab + " " + classes.capitalize}
-				/>
+					/>
 
-				<Tab classes={{
-					textColorInherit:classes.tabTextcolorInherit,
-					labelIcon:classes.labelIcon,
-					wrapper:classes.wrapper,
-				}} 
-					label="Ayuda" 
-					icon={<img src="./svg/question-mark.svg" alt="User Icon" className={classes.tabIcon}/>}
-					className={classes.tab + " " + classes.capitalize}
-				/>
+					<Tab classes={{
+						textColorInherit:classes.tabTextcolorInherit,
+						labelIcon:classes.labelIcon,
+						wrapper:classes.wrapper,
+					}} 
+						label="Configuraciones" 
+						icon={<img src="./svg/icon.svg" alt="User Icon" className={classes.tabIcon}/>}
+						className={classes.tab + " " + classes.capitalize}
+					/>
+	
+					<Tab classes={{
+						textColorInherit:classes.tabTextcolorInherit,
+						labelIcon:classes.labelIcon,
+						wrapper:classes.wrapper,
+					}} 
+						label="Ayuda" 
+						icon={<img src="./svg/question-mark.svg" alt="User Icon" className={classes.tabIcon}/>}
+						className={classes.tab + " " + classes.capitalize}
+					/>
 
-				<Tab classes={{
-					textColorInherit:classes.tabTextcolorInherit,
-					labelIcon:classes.labelIcon,
-					wrapper:classes.wrapper,
-				}}
- 					label="Cerrar Sesión" 
-					icon={<img src="./svg/logout.svg" alt="User Icon" className={classes.tabIcon}/>}
-					className={classes.tab + " " + classes.capitalize + " " + classes.lastTab}
-				/>
-			</Tabs>
+					<Tab classes={{
+						textColorInherit:classes.tabTextcolorInherit,
+						labelIcon:classes.labelIcon,
+						wrapper:classes.wrapper,
+					}}
+ 						label="Cerrar Sesión" 
+						icon={<img src="./svg/logout.svg" alt="User Icon" className={classes.tabIcon}/>}
+						className={classes.tab + " " + classes.capitalize + " " + classes.lastTab}
+					/>
+				</Tabs>
+			</Box>
+
 		</Box>
-		<Box px="1rem" py="1.75rem">
-			<Box>
-				
-				<Box>
-					<Box mx="auto">
-						<img className={classes.image} src={image} alt="..."/>
-					</Box>
-					<Box textAlign="center" mt="1.25rem" mb="2.25rem">
-						<Typography className={classes.title + " " + classes.perfilTitle} variant="h3">Morgan Freeman</Typography>
-						<Typography variant="p">Colegio Alemán</Typography>
-					</Box>
-					<Box borderBottom="1px solid black" mt=".75rem" mb="1.25rem" pb=".75rem">
-			 			<Typography className={classes.primaryTitle + " " + classes.title} variant="h4">Perfil</Typography>	
-					</Box>
-					<Box>
+			 
+		<Box className={classes.mainWrapper} px="1rem" py="1.75rem">
+			
+			<Box className={classes.sectionWrapper}>
+				<Box borderBottom="1px solid black" mt=".75rem" mb="1.25rem" pb=".75rem">
+		 				<Typography className={classes.primaryTitle + " " + classes.title} variant="h4">Perfil</Typography>	
+				</Box>
 					<Box>
 						<Typography className={classes.body + " " + classes.title} variant="p">Nombre</Typography>	
 						<GenericInput className={classes.input} type="text" placeholder="Escribe algo" />
@@ -235,44 +278,45 @@ const StudentProfile = ({classes})=>{
 						<Button className={classes.saveButton}>Guardar</Button>
 						<Button className={classes.cancelButton + " " + classes.capitalize}>Cancelar</Button>
 					</Box>
-				</Box>
-
 			</Box>
 
-			<Box>
-				<Box borderBottom="1px solid black" mt="2.25rem" mb="1.25rem" pb=".75rem">
+			<Box className={classes.sectionWrapper}>
+				<Box className={classes.calificaciones} borderBottom="1px solid black" mt="2.25rem" mb="1.25rem" pb=".75rem">
 		 			<Typography className={classes.primaryTitle + " " + classes.title} variant="h4">Calificaciones</Typography>	
 				</Box>
+				<Box>
+					<Typography className={classes.title + " " + classes.secondaryTitle} variant="h5">Promedio:</Typography>
+				</Box>
+				<Box>
+					<Typography className={classes.secondaryTitle + " " + classes.title} variant="h5">Comentarios:</Typography>
+				</Box>
+
+				<Box display="flex" mt=".25rem" mb="1rem">
+					<Box maxWidth="3.5rem" mr="1.25rem">
+						<img className={classes.image} src={image} alt="..." />
+					</Box>
 
 					<Box>
-						<Typography className={classes.title + " " + classes.secondaryTitle} variant="h5">Promedio:</Typography>
+						<Typography variant="h5">Ricardo</Typography>}
+						<Typography className={classes.body} variant="p">Lorem ipsium</Typography>
 					</Box>
-					<Box>
-						<Typography className={classes.secondaryTitle + " " + classes.title} variant="h5">Comentarios:</Typography>
-					</Box>
-					<Box display="flex" mt=".25rem" mb="1rem">
-						<Box maxWidth="3.5rem" mr="1.25rem">
-							<img className={classes.image} src={image} alt="..." />
-						</Box>
-						<Box>
-							<Typography variant="h5">Ricardo</Typography>
-							<Typography className={classes.body} variant="p">Lorem ipsium</Typography>
-						</Box>
+				</Box>
+
+				<Box display="flex" mb="1rem">
+					<Box maxWidth="3.5rem" mr="1.25rem">
+						<img className={classes.image} src={image} alt="..." />
 					</Box>
 
-					<Box display="flex" mb="1rem">
-						<Box maxWidth="3.5rem" mr="1.25rem">
-							<img className={classes.image} src={image} alt="..." />
-						</Box>
-						<Box>
-							<Typography variant="h5">Ricardo</Typography>
-							<Typography className={classes.body} variant="p">Lorem ipsium</Typography>
-						</Box>
+					<Box>
+						<Typography variant="h5">Ricardo</Typography>
+						<Typography className={classes.body} variant="p">Lorem ipsium</Typography>
 					</Box>
-				</Box>				
+				</Box>
+			</Box>
+
 			</Box>
 		</Box>
-	</>
+</>
 	)
 
 }
