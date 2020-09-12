@@ -8,7 +8,9 @@ import GenericInput from "../../components/GenericInput/index.js";
 
 const styles = ()=>{
 	return createStyles({
-		
+		bgWhite:{
+			background:"white",
+		},	
 		wrapper:{
 			alignItems:"flex-start",
 			paddingLeft:"45%",
@@ -111,13 +113,22 @@ const styles = ()=>{
 			burgerMenu:{
 				display:"none",
 			},
+			body:{
+				fontSize:"1rem",
+			},
 			inVisible:{
 				display:"block",
+			},
+			image:{
+				display:"block",
+				margin:"0 auto",
+				width:"80%",
 			},
 			imageWrapper:{
 				maxWidth:270,
 				background:"rgba(0,0,0,.65)",
 				color:"white",
+				paddingTop:"1rem",
 			},
 			inputWrapper:{
 				marginBottom:".75rem",
@@ -147,10 +158,13 @@ const styles = ()=>{
 				marginTop:".75rem",
 				fontSize:"1,75rem"
 			},
-			sectionWrapper:{
+			sectionPerfil:{
 				width:"45%",
-				marginLeft: "auto",
-				marginRight: "auto",
+				marginLeft: ".75rem",
+			},
+			sectionCalificaciones:{
+				width:"30%",
+				marginLeft: "2rem",
 			},
 			profileName:{
 				marginBottom:0,
@@ -192,7 +206,7 @@ const StudentProfile = ({classes})=>{
 
 		<Box>
 
-			<Box classes={{root:classes.imageWrapper}}>
+			<Box className={classes.imageWrapper}>
 				<Box mx="auto">
 					<img className={classes.image} src={image} alt="..."/>
 				</Box>
@@ -275,23 +289,43 @@ const StudentProfile = ({classes})=>{
 
 		</Box>
 			 
-		<Box className={classes.mainWrapper} px="1rem" py="1.75rem">
+		<Box className={classes.mainWrapper + " " + classes.bgWhite} px="1rem" py="1.75rem">
 			
-			<Box className={classes.sectionWrapper + " " + classes.perfil}>
+			<Box className={classes.sectionPerfil + " " + classes.perfil}>
 				<Box borderBottom="1px solid black" mt=".75rem" mb="1.25rem" pb=".75rem">
 		 				<Typography className={classes.primaryTitle + " " + classes.title} variant="h4">Perfil</Typography>	
 				</Box>
 					<Box className={classes.mainWrapper + " " + classes.inputWrapper} mb=".5rm">
 						<Typography className={classes.body + " " + classes.title} variant="p">Nombre</Typography>	
-						<GenericInput className={classes.input} type="text" placeholder="Escribe algo" />
+						<GenericInput className={classes.input} type="text" placeholder="Nicolas Fuentes" />
 					</Box>
 					<Box className={classes.mainWrapper + " " + classes.inputWrapper} mb=".5rm">
-						<Typography className={classes.body + " " + classes.title} variant="p">Nombre</Typography>	
-						<GenericInput className={classes.input} type="text" placeholder="Escribe algo" />
+						<Typography className={classes.body + " " + classes.title} variant="p">Apoderado</Typography>	
+						<GenericInput className={classes.input} type="text" placeholder="Michelle Obama" />
 					</Box>
 					<Box className={classes.mainWrapper + " " + classes.inputWrapper} mb=".5rm">
-						<Typography className={classes.body + " " + classes.title} variant="p">Nombre</Typography>	
-						<GenericInput className={classes.input} type="text" placeholder="Escribe algo" />
+						<Typography className={classes.body + " " + classes.title} variant="p">Colegio</Typography>	
+						<GenericInput className={classes.input} type="text" placeholder="Colegio Alemán" />
+					</Box>
+					<Box className={classes.mainWrapper + " " + classes.inputWrapper} mb=".5rm">
+						<Typography className={classes.body + " " + classes.title} variant="p">Curso</Typography>	
+						<GenericInput className={classes.input} type="text" placeholder="2° Medio" />
+					</Box>
+					<Box className={classes.mainWrapper + " " + classes.inputWrapper} mb=".5rm">
+						<Typography className={classes.body + " " + classes.title} variant="p">Teléfono</Typography>	
+						<GenericInput className={classes.input} type="tel" placeholder="+569 344 235 66" />
+					</Box>
+					<Box className={classes.mainWrapper + " " + classes.inputWrapper} mb=".5rm">
+						<Typography className={classes.body + " " + classes.title} variant="p">Email</Typography>	
+						<GenericInput className={classes.input} type="email" placeholder="quieroseractor@gmail.com" />
+					</Box>
+					<Box className={classes.mainWrapper + " " + classes.inputWrapper} mb=".5rm">
+						<Typography className={classes.body + " " + classes.title} variant="p">Ciudad</Typography>	
+						<GenericInput className={classes.input} type="text" placeholder="Vivaldia" />
+					</Box>
+					<Box className={classes.mainWrapper + " " + classes.inputWrapper} mb=".5rm">
+						<Typography className={classes.body + " " + classes.title} variant="p">Dirección</Typography>	
+						<GenericInput className={classes.input} type="text" placeholder="Av. Francia 2340. Casa blanca" />
 					</Box>
 					<Box display="flex" my="1rem">
 						<Button className={classes.saveButton}>Guardar</Button>
@@ -299,7 +333,7 @@ const StudentProfile = ({classes})=>{
 					</Box>
 			</Box>
 
-			<Box className={classes.sectionWrapper}>
+			<Box className={classes.sectionCalificaciones}>
 				<Box className={classes.calificaciones} borderBottom="1px solid black" mt="2.25rem" mb="1.25rem" pb=".75rem">
 		 			<Typography className={classes.primaryTitle + " " + classes.title} variant="h4">Calificaciones</Typography>	
 				</Box>
@@ -316,7 +350,7 @@ const StudentProfile = ({classes})=>{
 					</Box>
 
 					<Box>
-						<Typography variant="h5">Ricardo</Typography>}
+						<Typography className={classes.body + " " + classes.title} variant="h5">Ricardo</Typography>}
 						<Typography className={classes.body} variant="p">Lorem ipsium</Typography>
 					</Box>
 				</Box>
@@ -327,7 +361,7 @@ const StudentProfile = ({classes})=>{
 					</Box>
 
 					<Box>
-						<Typography variant="h5">Ricardo</Typography>
+						<Typography className={classes.body + " " + classes.title} variant="h5">Ricardo</Typography>
 						<Typography className={classes.body} variant="p">Lorem ipsium</Typography>
 					</Box>
 				</Box>
