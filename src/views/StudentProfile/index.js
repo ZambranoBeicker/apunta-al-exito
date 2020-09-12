@@ -65,17 +65,19 @@ const styles = ()=>{
 			background:"#46aaf0",
 			color:"white",
 			marginLeft:"auto",
-			padding:".25rem 1.75rem",
+			padding:".25rem 2.75rem",
 			textTransform:"capitalize",
 		},
 		cancelButton:{
 			background:"rgba(0,0,0,.25)",
 			color:"white",
 			marginLeft:".75rem",
-			padding:".25rem 1.75rem",
+			padding:".25rem 2.75rem",
 		},
 		input:{
-			marginTop:0,
+			margin:0,
+			maxWidth:390,
+			marginLeft:"auto",
 		},
 		tabIcon:{
 			maxWidth:"100%",
@@ -99,6 +101,7 @@ const styles = ()=>{
 		},
 		body:{
 			fontSize:".875rem",
+			marginRight:"1rem"
 		},
 		table:{
 			border:"1px solid rgba(0,0,0,.25)",
@@ -116,10 +119,25 @@ const styles = ()=>{
 				background:"rgba(0,0,0,.65)",
 				color:"white",
 			},
+			inputWrapper:{
+				marginBottom:".75rem",
+				alignItems:"center",
+				marginRight:"auto",
+			},
 			tabs:{
 				position:"static",
 				maxWidth:270,
 				marginRight:"auto",
+				paddingTop:"2rem",
+			},
+			wrapper:{
+				paddingLeft:"30%",
+			},
+			tabIcon:{
+				left:"10%",
+			},
+			perfil:{
+				fontSize:"1,75rem"
 			},
 			mainWrapper:{
 				display:"flex",
@@ -127,6 +145,7 @@ const styles = ()=>{
 			},
 			calificaciones:{
 				marginTop:".75rem",
+				fontSize:"1,75rem"
 			},
 			sectionWrapper:{
 				width:"45%",
@@ -258,19 +277,19 @@ const StudentProfile = ({classes})=>{
 			 
 		<Box className={classes.mainWrapper} px="1rem" py="1.75rem">
 			
-			<Box className={classes.sectionWrapper}>
+			<Box className={classes.sectionWrapper + " " + classes.perfil}>
 				<Box borderBottom="1px solid black" mt=".75rem" mb="1.25rem" pb=".75rem">
 		 				<Typography className={classes.primaryTitle + " " + classes.title} variant="h4">Perfil</Typography>	
 				</Box>
-					<Box>
+					<Box className={classes.mainWrapper + " " + classes.inputWrapper} mb=".5rm">
 						<Typography className={classes.body + " " + classes.title} variant="p">Nombre</Typography>	
 						<GenericInput className={classes.input} type="text" placeholder="Escribe algo" />
 					</Box>
-					<Box>
+					<Box className={classes.mainWrapper + " " + classes.inputWrapper} mb=".5rm">
 						<Typography className={classes.body + " " + classes.title} variant="p">Nombre</Typography>	
 						<GenericInput className={classes.input} type="text" placeholder="Escribe algo" />
 					</Box>
-					<Box>
+					<Box className={classes.mainWrapper + " " + classes.inputWrapper} mb=".5rm">
 						<Typography className={classes.body + " " + classes.title} variant="p">Nombre</Typography>	
 						<GenericInput className={classes.input} type="text" placeholder="Escribe algo" />
 					</Box>
