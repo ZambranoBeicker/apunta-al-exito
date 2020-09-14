@@ -352,7 +352,10 @@ const StudentProfile = ({classes})=>{
 					</Box>
 
 					<Box>
-						<Typography className={classes.body + " " + classes.title} variant="h5">Ricardo</Typography>}
+						<Box width="145%" display="flex" justifyContent="space-between">
+							<Typography className={classes.body + " " + classes.title} variant="h5">Ricardo</Typography>
+							<Rating wrapperMargin={0} wrapperWidth="150%" starHeight="100%" isThereCount={false} />
+						</Box>
 						<Typography className={classes.body} variant="p">Lorem ipsium</Typography>
 					</Box>
 				</Box>
@@ -363,7 +366,10 @@ const StudentProfile = ({classes})=>{
 					</Box>
 
 					<Box>
-						<Typography className={classes.body + " " + classes.title} variant="h5">Ricardo</Typography>
+						<Box width="145%" display="flex" justifyContent="space-between">
+							<Typography className={classes.body + " " + classes.title} variant="h5">Ricardo</Typography>
+							<Rating wrapperMargin={0} wrapperWidth="150%" starHeight="100%" isThereCount={false} />
+						</Box>
 						<Typography className={classes.body} variant="p">Lorem ipsium</Typography>
 					</Box>
 				</Box>

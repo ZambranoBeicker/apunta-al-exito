@@ -19,11 +19,11 @@ const styles = () =>{
 	})
 }
 
-const Rating = ({classes, starHeight = "1.5rem", isThereCount = true})=>{
+const Rating = ({classes, wrapperMargin = ".5rem 0 1rem 0", wrapperWidth = "60%", starHeight = "1.5rem", isThereCount = true})=>{
 
 	const [ratingCount, setRatingCount] = useState(3)
 	return(
-		<Box mt=".5rem" mb="1rem" width="60%" display="flex" justifyContent="space-between">
+		<Box m={wrapperMargin} width={wrapperWidth} display="flex" justifyContent="space-between">
 			<Box height={starHeight} width="17%">
 				<img className={classes.star} src="./svg/star.svg" alt="Estrella de Puntajes"/>
 			</Box>
