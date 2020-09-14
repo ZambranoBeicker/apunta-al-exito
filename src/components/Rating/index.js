@@ -19,7 +19,7 @@ const styles = () =>{
 	})
 }
 
-const Rating = ({classes, starHeight = "1.5rem"})=>{
+const Rating = ({classes, starHeight = "1.5rem", isThereCount = true})=>{
 
 	const [ratingCount, setRatingCount] = useState(3)
 	return(
@@ -39,7 +39,7 @@ const Rating = ({classes, starHeight = "1.5rem"})=>{
 			<Box height={starHeight} width="17%">
 				<img className={classes.star} src="./svg/star.svg" alt="Estrella de Puntajes"/>
 			</Box>
-			<Box className={classes.ratingCount} component="label">{`(${ratingCount})`}</Box>	
+			{ (isThereCount) && <Box className={classes.ratingCount} component="label">{`(${ratingCount})`}</Box> }	
 		</Box>
 	)
 }
