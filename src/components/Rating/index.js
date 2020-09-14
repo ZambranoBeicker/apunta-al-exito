@@ -17,8 +17,20 @@ const styles = () =>{
 const Rating = ({classes})=>{
 
 	return(
-		<Box mt=".5rem" mb="1rem">
-			<Box height="2rem">
+		<Box mt=".5rem" mb="1rem" width="60%" display="flex" justifyContent="space-between">
+			<Box height="1.75rem" width="17%">
+				<img className={classes.star} src="./svg/star.svg" alt="Estrella de Puntajes"/>
+			</Box>
+			<Box height="1.75rem" width="17%">
+				<img className={classes.star} src="./svg/star.svg" alt="Estrella de Puntajes"/>
+			</Box>
+			<Box height="1.75rem" width="17%">
+				<img className={classes.star} src="./svg/star.svg" alt="Estrella de Puntajes"/>
+			</Box>
+			<Box height="1.75rem" width="17%">
+				<img className={classes.star} src="./svg/star.svg" alt="Estrella de Puntajes"/>
+			</Box>
+			<Box height="1.75rem" width="17%">
 				<img className={classes.star} src="./svg/star.svg" alt="Estrella de Puntajes"/>
 			</Box>
 		</Box>
