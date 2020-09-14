@@ -19,24 +19,24 @@ const styles = () =>{
 	})
 }
 
-const Rating = ({classes})=>{
+const Rating = ({classes, starHeight = "1.5rem"})=>{
 
 	const [ratingCount, setRatingCount] = useState(3)
 	return(
 		<Box mt=".5rem" mb="1rem" width="60%" display="flex" justifyContent="space-between">
-			<Box height="1.5rem" width="17%">
+			<Box height={starHeight} width="17%">
 				<img className={classes.star} src="./svg/star.svg" alt="Estrella de Puntajes"/>
 			</Box>
-			<Box height="1.5rem" width="17%">
+			<Box height={starHeight} width="17%">
 				<img className={classes.star} src="./svg/star.svg" alt="Estrella de Puntajes"/>
 			</Box>
-			<Box height="1.5rem" width="17%">
+			<Box height={starHeight} width="17%">
 				<img className={classes.star} src="./svg/star.svg" alt="Estrella de Puntajes"/>
 			</Box>
-			<Box height="1.5rem" width="17%">
+			<Box height={starHeight} width="17%">
 				<img className={classes.star} src="./svg/star.svg" alt="Estrella de Puntajes"/>
 			</Box>
-			<Box height="1.5rem" width="17%">
+			<Box height={starHeight} width="17%">
 				<img className={classes.star} src="./svg/star.svg" alt="Estrella de Puntajes"/>
 			</Box>
 			<Box className={classes.ratingCount} component="label">{`(${ratingCount})`}</Box>	
