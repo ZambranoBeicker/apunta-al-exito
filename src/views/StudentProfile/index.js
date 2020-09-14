@@ -4,6 +4,7 @@ import { createStyles, withStyles } from "@material-ui/core/styles"
 import MenuIcon from "@material-ui/icons/Menu"
 import image from "assets/img/faces/avatar.jpg";
 import GenericInput from "../../components/GenericInput/index.js";
+import Rating from "../../components/Rating/index.js";
 
 
 const styles = ()=>{
@@ -339,6 +340,7 @@ const StudentProfile = ({classes})=>{
 				</Box>
 				<Box>
 					<Typography className={classes.title + " " + classes.secondaryTitle} variant="h5">Promedio:</Typography>
+					<Rating />
 				</Box>
 				<Box>
 					<Typography className={classes.secondaryTitle + " " + classes.title} variant="h5">Comentarios:</Typography>
