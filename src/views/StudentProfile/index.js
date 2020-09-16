@@ -39,9 +39,10 @@ const styles = ()=>{
 			width:"100%",
 			position:"fixed",
 			top:0,
-			background:"rgba(0,0,0,.65)",
+			background:"rgba(30,30,30,1)",
 			color:"white",
 			padding:"4.5rem 0",
+			zIndex:100,
 		},
 		tab:{
 			margin:"0 auto",
@@ -293,7 +294,7 @@ const StudentProfile = ({classes})=>{
 		<Box className={classes.mainWrapper + " " + classes.bgWhite} px="1rem" py="1.75rem">
 			
 			<Box className={classes.sectionPerfil + " " + classes.perfil}>
-				<Box borderBottom="1px solid black" mt=".75rem" mb="1.25rem" pb=".75rem">
+				<Box borderBottom="1px solid #808080" mt=".75rem" mb="1.25rem" pb=".75rem">
 		 				<Typography className={classes.primaryTitle + " " + classes.title} variant="h4">Perfil</Typography>	
 				</Box>
 					<Box className={classes.mainWrapper + " " + classes.inputWrapper} mb=".5rm">
@@ -335,7 +336,7 @@ const StudentProfile = ({classes})=>{
 			</Box>
 
 			<Box className={classes.sectionCalificaciones}>
-				<Box className={classes.calificaciones} borderBottom="1px solid black" mt="2.25rem" mb="1.25rem" pb=".75rem">
+				<Box className={classes.calificaciones} borderBottom="1px solid #808080" mt="2.25rem" mb="1.25rem" pb=".75rem">
 		 			<Typography className={classes.primaryTitle + " " + classes.title} variant="h4">Calificaciones</Typography>	
 				</Box>
 				<Box>
