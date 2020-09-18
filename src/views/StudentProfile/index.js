@@ -39,7 +39,7 @@ const styles = ()=>{
 			width:"100%",
 			position:"fixed",
 			top:0,
-			background:"rgba(30,30,30,1)",
+			background:"rgba(50,50,50,1)",
 			color:"white",
 			padding:"4.5rem 0",
 			zIndex:100,
@@ -128,7 +128,7 @@ const styles = ()=>{
 			},
 			imageWrapper:{
 				maxWidth:270,
-				background:"rgba(0,0,0,.65)",
+				background:"rgba(50,50,50,1)",
 				color:"white",
 				paddingTop:"1rem",
 			},
