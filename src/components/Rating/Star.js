@@ -37,15 +37,25 @@ const Star = ({classes, height, setCount, count, position})=>{
 		} 
 	}
 
+	useEffect(()=>{
+		
+		if(count >= position){
+			setStarState(false)
+		}else if(count < position){
+			setStarState(true)
+		}
+	})
+
 
 	return (
 		<Box 
 			onClick={()=>{
-				if(count >= position){
-					setStarState(false)
+				if(count === position){
+					setCount(c => c-1)
+
+				}else{
 					setCount(position)
-				}else if(count < position){
-					setStarState(true)
+
 				}
 			}} 
 

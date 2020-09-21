@@ -20,11 +20,11 @@ const Rating = ({classes, wrapperMargin = ".5rem 0 1rem 0", wrapperWidth = "60%"
 
 	return(
 		<Box m={wrapperMargin} width={wrapperWidth} display="flex" justifyContent="space-between">
-			<Star height={starHeight} />
-			<Star height={starHeight} />
-			<Star height={starHeight} />
-			<Star height={starHeight} />
-			<Star height={starHeight} />
+			<Star position={1} count={ratingCount} setCount={setRatingCount} height={starHeight} />
+			<Star position={2} count={ratingCount} setCount={setRatingCount} height={starHeight} />
+			<Star position={3} count={ratingCount} setCount={setRatingCount} height={starHeight} />
+			<Star position={4} count={ratingCount} setCount={setRatingCount} height={starHeight} />
+			<Star position={5} count={ratingCount} setCount={setRatingCount} height={starHeight} />
 			{ (isThereCount) && <Box className={classes.ratingCount} component="label">{`(${ratingCount})`}</Box> }	
 		</Box>
 	)
