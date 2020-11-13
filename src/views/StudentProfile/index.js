@@ -17,11 +17,11 @@ const styles = () => {
   return createStyles({
     bgWhite: {
       background: "white",
-		},
-		imageWrapper: {
-        background: "rgba(50,50,50,1)",
-        color: "white",
-      },
+    },
+    imageWrapper: {
+      background: "rgba(50,50,50,1)",
+      color: "white",
+    },
     wrapper: {
       alignItems: "flex-start",
       paddingLeft: "45%",
@@ -38,6 +38,7 @@ const styles = () => {
     },
     burgerMenuActive: {
       color: "white",
+			zIndex:100,
     },
     lastTab: {
       borderBottom: "1px solid white",
@@ -52,7 +53,7 @@ const styles = () => {
       background: "rgba(50,50,50,1)",
       color: "white",
       padding: "4.5rem 0",
-      zIndex: 100,
+      zIndex: 10,
     },
     tab: {
       margin: "0 auto",
@@ -224,7 +225,7 @@ const StudentProfile = ({ classes }) => {
               className={classes.profileName}
               textAlign="center"
               mt="1.25rem"
-              mb="2.25rem"
+              pb="2.25rem"
             >
               <Typography
                 className={classes.title + " " + classes.perfilTitle}
